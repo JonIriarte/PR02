@@ -3,13 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2020 a las 21:36:35
+-- Tiempo de generación: 02-11-2020 a las 19:27:40
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -20,6 +18,7 @@ SET time_zone = "+00:00";
 
 --
 -- Base de datos: `bd_restaurante`
+--
 CREATE DATABASE bd_restaurante;
 USE DATABASE  bd_restaurante; 
 -- --------------------------------------------------------
@@ -31,7 +30,7 @@ USE DATABASE  bd_restaurante;
 CREATE TABLE `camarero` (
   `id_camarero` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `password` int(255) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -44,7 +43,7 @@ CREATE TABLE `incidencia` (
   `id_incidencia` int(11) NOT NULL,
   `descripcion_incidencia` text NOT NULL,
   `estado_incidencia` enum('abierta','solucionada','en progreso','cerrada') NOT NULL,
-  `fecha_incidencia` int(11) NOT NULL,
+  `fecha_incidencia` datetime NOT NULL,
   `id_mesa` int(11) NOT NULL COMMENT 'Depende de la tabla "Mesa"'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -57,8 +56,8 @@ CREATE TABLE `incidencia` (
 CREATE TABLE `mesa` (
   `id_mesa` int(11) NOT NULL,
   `disponible_mesa` tinyint(1) NOT NULL,
-  `plazas_mesa` enum('1','2','3','4','5','6','7','8') NOT NULL COMMENT 'Editar dependiendo de info',
-  `lugar_mesa` enum('Terraza','Barra','Sala','') NOT NULL COMMENT 'Editar dependendo de info'
+  `plazas_mesa` enum('1','2','4') NOT NULL,
+  `lugar_mesa` enum('Terraza','Barra','Sala') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -70,6 +69,7 @@ CREATE TABLE `mesa` (
 CREATE TABLE `reserva` (
   `id_reserva` int(11) NOT NULL,
   `fecha_reserva` datetime NOT NULL,
+  `fin_reserva` datetime DEFAULT NULL,
   `id_camarero` int(11) NOT NULL COMMENT 'Depende de la tabla "camarero"',
   `id_mesa` int(11) NOT NULL COMMENT 'Depende de la tabla "mesa"'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -89,7 +89,7 @@ ALTER TABLE `camarero`
 --
 ALTER TABLE `incidencia`
   ADD PRIMARY KEY (`id_incidencia`),
-  ADD KEY `fk_id_incidencia` (`id_mesa`);
+  ADD KEY `fk_id_mesa` (`id_mesa`);
 
 --
 -- Indices de la tabla `mesa`
@@ -102,12 +102,18 @@ ALTER TABLE `mesa`
 --
 ALTER TABLE `reserva`
   ADD PRIMARY KEY (`id_reserva`),
-  ADD KEY `fk_id_camarero` (`id_camarero`),
-  ADD KEY `fk_id_mesa` (`id_mesa`);
+  ADD KEY `fk_id_mesa` (`id_mesa`) USING BTREE,
+  ADD KEY `fk_id_camarero` (`id_camarero`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `camarero`
+--
+ALTER TABLE `camarero`
+  MODIFY `id_camarero` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `incidencia`
@@ -135,15 +141,15 @@ ALTER TABLE `reserva`
 -- Filtros para la tabla `incidencia`
 --
 ALTER TABLE `incidencia`
-  ADD CONSTRAINT `fk_id_incidencia` FOREIGN KEY (`id_mesa`) REFERENCES `mesa` (`id_mesa`);
+  ADD CONSTRAINT `fk_id_mesa` FOREIGN KEY (`id_mesa`) REFERENCES `mesa` (`id_mesa`);
 
 --
 -- Filtros para la tabla `reserva`
 --
 ALTER TABLE `reserva`
+  ADD CONSTRAINT `fk_id_camarer` FOREIGN KEY (`id_camarero`) REFERENCES `camarero` (`id_camarero`),
   ADD CONSTRAINT `fk_id_camarero` FOREIGN KEY (`id_camarero`) REFERENCES `camarero` (`id_camarero`),
-  ADD CONSTRAINT `fk_id_mesa` FOREIGN KEY (`id_mesa`) REFERENCES `mesa` (`id_mesa`);
-COMMIT;
+  ADD CONSTRAINT `fk_id_mes` FOREIGN KEY (`id_mesa`) REFERENCES `mesa` (`id_mesa`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
