@@ -6,10 +6,10 @@
         private $nombre;
 
         //Constructor
-        public function __construct($nombre,$passwd){
+        public function __construct($nombre,$password){
             $this->nombre=$nombre;
             $this->password=$password;
-        
+        }
     /**
      * @return mixed
      */

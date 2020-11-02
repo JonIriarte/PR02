@@ -2,18 +2,18 @@
 include '../model/camarero.php';
 include '../model/camareroDAO.php';
 if (isset($_POST['nombre'])) {
-    $camarero = new Admin($_POST['nombre'], md5($_POST['password']));
-    $camareroDAO = new AdminDAO();
+    $camarero = new Camarero($_POST['nombre'], md5($_POST['password']));
+    $camareroDAO = new CamareroDao();
     if($camareroDAO->login($camarero)){
         echo 'perfect';
         // establecer sesiones
         // redirección a la zona de administración mesas
-        header('Location: ../admin.page.php');
+        header('Location: ../view/zona.admin.php');
     }else {
-        header('Location: ../login.php');//sino está bien hecho el login volvemos a la página de login.
-        echo "fallo";
+       header('Location: ../view/login.php');//sino está bien hecho el login volvemos a la página de login.
+        //echo "fallo";
     }
-}else {
-    header('Location: ../login.php');
+} else {
+   header('Location: ../view/login.php');
     //echo "no entra en el primer if";
 }

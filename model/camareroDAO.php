@@ -13,7 +13,7 @@ class CamareroDao{
         $query = "SELECT * FROM camarero WHERE `nombre`=? AND `password`=?";
         $sentencia=$this->pdo->prepare($query);
         $nombre=$user->getNombre();//falta el getNombre
-        $passwd=$user->getPassword();//falta el getPasswd
+        $password=$user->getPassword();//falta el getPasswd
         $sentencia->bindParam(1,$nombre);
         $sentencia->bindParam(2,$password);
         $sentencia->execute();
