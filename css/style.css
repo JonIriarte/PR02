@@ -1,4 +1,113 @@
-body{
+.body{
+	position: fixed;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
     background-image: url(../img/fondo.jpg);
-    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+	filter: blur(7px);
+}
+
+.header{
+    position: relative;
+    font-size: 500%;
+    color:  black;
+    text-align: center;
+    /* background-color: #FFFF66; */
+    margin-top: 5%;
+}
+
+.header span{
+	color: #5379fa !important;
+}
+
+.login{
+    position: fixed;
+    margin-top: 1%;
+	height: 200px;
+	width: 300px;
+	padding: 20px;
+    z-index: 2;
+    background-color: lightgoldenrodyellow;
+    opacity: 0.7;
+    margin-left: 37%;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+
+.login ::placeholder{
+    color: orangered;
+}
+
+.login input[type=text]{
+	width: 290px;
+	height: 40px;
+	background: transparent;
+	border: 1px solid #244623;
+	border-radius: 3px;
+	color:grey;
+	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+    padding: 4px;
+}
+
+.login input[type=password]{
+	width: 290px;
+	height: 40px;
+	background: transparent;
+	border: 1px solid #244623;
+	border-radius: 3px;
+	color: grey;
+	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=submit]{
+	width: 300px;
+	height: 40px;
+	background: #fff;
+	border: 1px solid #244623;
+	cursor: pointer;
+	border-radius: 2px;
+	color: brown;
+	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 16px;
+	padding: 8px;
+    margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
 }
