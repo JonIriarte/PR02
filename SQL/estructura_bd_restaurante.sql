@@ -18,6 +18,7 @@ CREATE TABLE `reserva` (
   `id_reserva` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `fecha_reserva` datetime NOT NULL,
   `fin_reserva` datetime DEFAULT NULL,
+  CONSTRAINT `ch_reserva` CHECK (`fecha_reserva`<`fin_reserva`),
   `id_camarero` int(11) NOT NULL COMMENT 'Depende de la tabla "camarero"',
   `id_mesa` int(11) NOT NULL COMMENT 'Depende de la tabla "mesa"', 
   Constraint fk_id_camarero FOREIGN KEY (id_camarero)
