@@ -102,6 +102,24 @@ class MesaDao{
 	        $pdo->beginTransaction();
 	        $disponible=$_POST['disponible_mesa'];
 	        $id=$_POST['id_mesa'];
+	        $id_camarero=$_POST['id_camarero'];
+	        $curdate=date("Y/m/d H:i:s");
+			echo $curdate; 
+	        echo $id;
+	        if ($_POST['disponible_mesa']==1){
+				$query="UPDATE `reserva` SET `fin_reserva`=? where id_mesa=? and id_camarero=? ORDER BY `id_reserva` DESC LIMIT 1;";
+	        	$sentencia1=$pdo->prepare($query);
+	        	$sentencia1->bindParam(1,$curdate);
+	        	$sentencia1->bindParam(2,$id);
+	        	$sentencia1->bindParam(3,$id_camarero);
+	        	$sentencia1->execute();
+	        } elseif ($_POST['disponible_mesa']==0){
+	        	$stmt=$pdo->prepare("INSERT INTO `reserva` (`id_reserva`, `fecha_reserva`, `fin_reserva`, `id_camarero`, `id_mesa`) VALUES (NULL, ?, NULL, ?, ?);");
+	        	$stmt->bindParam(1,$curdate);
+				$stmt->bindParam(2,$id_camarero);
+				$stmt->bindParam(3,$id);
+				$stmt->execute();
+	        }
 	        $query="UPDATE `mesa` SET `disponible_mesa`=? WHERE `id_mesa` = ?;";
 	        $sentencia1=$pdo->prepare($query);
 	        $sentencia1->bindParam(1,$disponible);

@@ -13,7 +13,6 @@
 		$sql="SELECT distinct lugar_mesa FROM mesa";
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
-
 		$lista_filtro=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 		echo "<select name='lugares' style='float:left';>";
 		foreach ($lista_filtro as $lugar) {
