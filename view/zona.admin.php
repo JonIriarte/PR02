@@ -7,6 +7,8 @@
 	<?php
 		require_once '../controller/session_controller.php';
 	?>
+	<button><a href="./mostrar_reserva.php">Reserva</a></button>
+	<br><br>
 	<form action="./zona.admin.php" method="POST">
 		<?php
   		include '../model/connection.php';
