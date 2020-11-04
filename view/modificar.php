@@ -20,12 +20,12 @@
     }
   	?>
 	<form action="./modificar.php" method="POST">
-		<label for="id_mesa">ID:</label><br>
-    	<input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" ><br>
-    	<input type="text" name="id_camarero" value="<?php echo $id_camarero;?>" ><br>
+    	<label for="id_mesa">ID:</label><br>
     	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
     	<label for="disponible_mesa">Disponible:</label><br>
     	<input type="text" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
+    	<input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
+    	<input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
     	<input type="submit" value="Submit" name="b_actualizar">
     </form> 
 </body>
