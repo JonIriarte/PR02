@@ -21,7 +21,7 @@
     	$actdisponible= new MesaDao();
     	$actualizar=$actdisponible->updateDisponible();
     }
-  	?><div id=volver"><h2><a href="./zona.admin.php">VOLVER</h2></div>
+  	?><div id=volver><h2><a href="./zona.admin.php">VOLVER</h2></a></div>
 	
 	<form action="./modificar.php" method="POST">
     	<label for="id_mesa">ID:</label><br>
