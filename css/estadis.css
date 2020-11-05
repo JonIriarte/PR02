@@ -1,0 +1,38 @@
+.body{
+    position: fixed;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+    background-image: url(../img/intro.png);
+    background-size: 100% 100%;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 25%;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr {
+    background-color: lightskyblue;
+    opacity: 0.9;
+    border: 1px solid black;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.est {
+    width: 30%;
+    margin-left: 35%;
+}

@@ -14,7 +14,7 @@ function validacionForm() {
         document.getElementById("password").style.borderColor = "red";
 
     } else if (nombre=='') {
-        document.getElementById("message").innerHTML = "Falta el nombre del usuario";
+        document.getElementById("message").innerHTML = "El nombre del usuario está vacío";
         document.getElementsByTagName("label")[0].style.color = "red";
         document.getElementsByTagName("label")[1].style.color = "black";
         document.getElementById("nombre").style.borderColor = "red";
