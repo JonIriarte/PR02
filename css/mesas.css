@@ -1,0 +1,45 @@
+.body{
+    position: fixed;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+    background-image: url(../img/intro.png);
+    background-size: 100% 100%;
+    filter: blur(7px);
+    z-index: -1;
+}
+
+.reser {
+    border: 3px solid black;
+    width: 25%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-left: 37.5%;
+    background-color: lightskyblue; 
+    text-align: center;
+    font-size: 150%;
+    margin-top: 3%;
+    opacity: 0.9;
+}
+
+.id {
+    text-align: left;
+    padding-left: 6%;
+}
+
+.disp {
+    text-align: left;
+    padding-left: 6%;
+}
+
+input[type=text] {
+    font-size: 100%;
+    height: 30px;
+}
+
+input[type=submit] {
+    height: 50px;
+    width: 200px;
+    font-size: 100%;
+}

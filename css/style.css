@@ -12,73 +12,69 @@
 
 .header{
     position: relative;
-    font-size: 500%;
+    font-size: 600%;
     color:  black;
     text-align: center;
-    /* background-color: #FFFF66; */
-    margin-top: 5%;
+	margin-top: 5%;
 }
 
 .header span{
-	color: #5379fa !important;
+	color: white !important;
 }
 
 .login{
     position: fixed;
-    margin-top: 1%;
-	height: 200px;
-	width: 300px;
-	padding: 20px;
+	height: 250px;
+	width: 350px;
+	padding-left: 3%;
+	padding-top: 3%;
     z-index: 2;
-    background-color: lightgoldenrodyellow;
-    opacity: 0.7;
-    margin-left: 37%;
+    background-color: lightskyblue;
+    opacity: 0.8;
+    margin-left: 35%;
     border-radius: 3px;
     border: 2px solid black;
 }
 
 .login ::placeholder{
-    color: orangered;
+    color: #000908;
 }
 
 .login input[type=text]{
-	width: 290px;
-	height: 40px;
+	width: 300px;
+	height: 50px;
 	background: transparent;
 	border: 1px solid #244623;
 	border-radius: 3px;
-	color:grey;
+	color: #000908;
 	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-    padding: 4px;
 }
 
 .login input[type=password]{
-	width: 290px;
-	height: 40px;
+	width: 300px;
+	height: 50px;
 	background: transparent;
 	border: 1px solid #244623;
 	border-radius: 3px;
-	color: grey;
+	color: #000908;
 	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 16px;
 	font-weight: 400;
-	padding: 4px;
 	margin-top: 10px;
 }
 
 .login input[type=submit]{
-	width: 300px;
-	height: 40px;
+	width: 310px;
+	height: 50px;
 	background: #fff;
 	border: 1px solid #244623;
 	cursor: pointer;
 	border-radius: 2px;
-	color: brown;
+	color: #663300;
 	font-family: 'Exo', Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 16px;
-	padding: 8px;
     margin-top: 10px;
 }
 

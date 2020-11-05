@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Deux Moulins</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" type="text/css" href="../css/mesas.css">
 </head>
 <body>
 	<?php
@@ -18,16 +21,17 @@
     	$actdisponible= new MesaDao();
     	$actualizar=$actdisponible->updateDisponible();
     }
-  	?>
-	<form action="./modificar.php" method="POST">
-    	<label for="id_mesa">ID:</label><br>
-    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
-    	<label for="disponible_mesa">Disponible:</label><br>
+	  ?>
+	<form action="./modificar.php" method="POST" class="reser">
+    	<div class="id"><label for="id_mesa">ID:</label><br></div>
+    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br><br>
+    	<div class="id"><label for="disponible_mesa">Disponible:</label><br></div>
     	<input type="text" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
     	<input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
     	<input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
-    	<input type="submit" value="Submit" name="b_actualizar">
-    </form> 
+    	<input type="submit" value="Reservar" name="b_actualizar">
+	</form> 
+	<div class="body"></div>
 </body>
 </html>
 

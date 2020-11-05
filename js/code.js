@@ -14,17 +14,17 @@ function validacionForm() {
         document.getElementById("password").style.borderColor = "red";
 
     } else if (nombre=='') {
-        document.getElementById("message").innerHTML = "Nombre del usuario";
+        document.getElementById("message").innerHTML = "Falta el nombre del usuario";
         document.getElementsByTagName("label")[0].style.color = "red";
         document.getElementsByTagName("label")[1].style.color = "black";
         document.getElementById("nombre").style.borderColor = "red";
-        document.getElementById("password").style.borderColor = "white";
+        document.getElementById("password").style.borderColor = "black";
     } else if (password=='') {
-        document.getElementById("message").innerHTML = "El password está vacio";
+        document.getElementById("message").innerHTML = "La contraseña está vacía";
         document.getElementsByTagName("label")[0].style.color = "black";
         document.getElementsByTagName("label")[1].style.color = "red";
         document.getElementById("password").style.borderColor = "red";
-        document.getElementById("nombre").style.borderColor = "white";
+        document.getElementById("nombre").style.borderColor = "black";
     } else {
         return true;
     }

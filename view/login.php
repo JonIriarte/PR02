@@ -21,10 +21,10 @@
   <div class="login">
     <form action="../controller/login_controller.php" method="POST" onsubmit="return validacionForm()">
       <label for="nombre"></label>
-      <input type="text" id="nombre" name="nombre" placeholder="usuario">
+      <input type="text" id="nombre" name="nombre" placeholder="Usuario">
     <br><br>
       <label for="password"></label>
-      <input type="password" id="password" name="password" placeholder="contraseña">
+      <input type="password" id="password" name="password" placeholder="Contraseña">
       <br><br>
       <input type="submit" id="submit" value="Entrar">
     </form>
