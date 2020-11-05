@@ -16,12 +16,15 @@ class MesaDao{
 		$lista_mesa=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($lista_mesa as $mesa) {
 			$id=$mesa["id_mesa"]." ";
+			$lugar="Ubicación: ";
+			$ocup="Asientos: ";
+			$nmesa="Mesa: ";
 		if ($mesa['disponible_mesa']==1) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 50%;left:50%;'>".$mesa['lugar_mesa']."<br>".$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
@@ -35,7 +38,7 @@ class MesaDao{
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 50%;left:50%;'>".$mesa['lugar_mesa']."<br>".$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
@@ -63,12 +66,15 @@ class MesaDao{
 		$lista_mesa=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 		foreach ($lista_mesa as $mesa) {
 			$id=$mesa["id_mesa"]." ";
+			$lugar="Ubicación: ";
+			$ocup="Asientos: ";
+			$nmesa="Mesa: ";
 		if ($mesa['disponible_mesa']==1) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 50%;left:50%;'>".$mesa['lugar_mesa']."<br>".$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
@@ -77,7 +83,7 @@ class MesaDao{
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 50%;left:50%;'>".$mesa['lugar_mesa']."<br>".$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			

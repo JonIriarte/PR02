@@ -20,7 +20,7 @@
 		foreach ($lista_filtro as $lugar) {
 			echo "<option value='".$lugar['lugar_mesa']."'>".$lugar['lugar_mesa']."</option>";
 		}
-			echo "<option value='Todos'>Todos</option>";
+			echo "<option selected value='Todos'>Todos</option>";
 		echo "</select><br><br>";
 		?>
 	<input type="checkbox" id="disponible" name="disponible" value="disponible">
