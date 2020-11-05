@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Deux Moulins</title>
+	<title>Reservar mesa</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="stylesheet" type="text/css" href="../css/mesas.css">
 </head>
 <body>
+
 	<?php
 		require_once '../controller/session_controller.php';
 		$id_camarero=$_SESSION['nombre']->getIdCamarero();
 	?>
+	
+	
 	<?php
 	require_once "../model/mesaDAO.php";
 	$mesadao = new MesaDao();
@@ -22,6 +25,8 @@
     	$actualizar=$actdisponible->updateDisponible();
     }
 	  ?>
+	<div id=volver"><h2><a href="./zona.admin.php">VOLVER</h2></a></div>
+	
 	<form action="./modificar.php" method="POST" class="reser">
     	<div class="id"><label for="id_mesa">ID:</label><br></div>
     	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br><br>
