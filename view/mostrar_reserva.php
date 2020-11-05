@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Estadísticas</title>
 </head>
 <body>
+
 	<?php 
 		require_once '../controller/session_controller.php'; 
 	?>
+	<div id=volver><h2><a href="./zona.admin.php">VOLVER</h2></a></div>  
 	<table cellpadding="6" cellspacing="6">
 		<tr>
 			<th>Mesa</th>
@@ -32,7 +34,7 @@
 	?>
 	</table>
 	<br>
-	<button><a href="./zona.admin.php">Volver atrás</button></a>
+	
 </body>
 </html>
 

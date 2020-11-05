@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Reservar mesa</title>
 </head>
 <body>
+
 	<?php
 		require_once '../controller/session_controller.php';
 		$id_camarero=$_SESSION['nombre']->getIdCamarero();
 	?>
+	
+	
 	<?php
 	require_once "../model/mesaDAO.php";
 	$mesadao = new MesaDao();
@@ -18,7 +21,8 @@
     	$actdisponible= new MesaDao();
     	$actualizar=$actdisponible->updateDisponible();
     }
-  	?>
+  	?><div id=volver"><h2><a href="./zona.admin.php">VOLVER</h2></div>
+	
 	<form action="./modificar.php" method="POST">
     	<label for="id_mesa">ID:</label><br>
     	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
