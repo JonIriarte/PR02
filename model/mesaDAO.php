@@ -106,12 +106,19 @@ class MesaDao{
     	try {    
 	        include '../model/connection.php';
 	        $pdo->beginTransaction();
-	        $disponible=$_POST['disponible_mesa'];
 	        $id=$_POST['id_mesa'];
 	        $id_camarero=$_POST['id_camarero'];
 	        $curdate=date("Y/m/d H:i:s");
+	        $boton=$_POST['b_actualizar'];
 			echo $curdate; 
 	        echo $id;
+	        if ($_POST['b_actualizar']=="Reservar mesa") {
+	        	$_POST['disponible_mesa']=0;
+	        	$disponible=$_POST['disponible_mesa'];
+	        } else if ($_POST['b_actualizar']=="Liberar mesa") {
+	        	$_POST['disponible_mesa']=1;
+	        	$disponible=$_POST['disponible_mesa'];
+	        }
 	        if ($_POST['disponible_mesa']==1){
 				$query="UPDATE `reserva` SET `fin_reserva`=? where id_mesa=? and id_camarero=? ORDER BY `id_reserva` DESC LIMIT 1;";
 	        	$sentencia1=$pdo->prepare($query);
