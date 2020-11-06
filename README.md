@@ -6,10 +6,10 @@
 - https://github.com/PabloSorianoAnton/Proyecto-DeuxMoulins.git
 
 - Usuarios/pass
-	- Camareros:
+- Camareros:
 	- camarero1: qweQWE123
 	- camarero2: qweQWE123
-	- Mantenimiento:
+- Mantenimiento:
 	- mantenimiento1: qweQWE123
 	- mantenimiento2: qweQWE123
 
