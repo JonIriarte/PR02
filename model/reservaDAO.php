@@ -9,7 +9,7 @@ class ReservaDao{
     }
     public function mostrarReservas(){
     	include '../model/connection.php';
-    	$sql="SELECT reserva.id_reserva,reserva.fecha_reserva,reserva.fin_reserva,reserva.id_mesa,camarero.nombre from reserva INNER JOIN camarero on reserva.id_camarero=camarero.id_camarero";
+    	$sql="SELECT reserva.id_reserva,reserva.fecha_reserva,reserva.fin_reserva,reserva.id_mesa,camarero.nombre from reserva INNER JOIN camarero on reserva.id_camarero=camarero.id_camarero order by id_reserva";
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
 

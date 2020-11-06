@@ -49,7 +49,7 @@
      <form action="./modificar.php" method="POST" class="inci">
         <div class="id"><label for="id_mesa">Mesa:</label><br></div>
         <input style="margin-bottom: 5%;" type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
-        <div class="disp"><label for="descripcion_incidencia">Descripción:</label><br></div>
+        <div class="id"><label for="descripcion_incidencia">Descripción:</label><br></div>
         <input class="caja" type="text" name="descripcion_incidencia" placeholder="Descripción incidencia" required><br>
         <input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
         <input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
