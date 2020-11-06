@@ -1,5 +1,6 @@
 <?php 
 require_once '../model/camarero.php';
+require_once '../model/mantenimiento.php';
 session_start();
 if (!isset($_SESSION['nombre'])) {
     header('Location:../view/login.php');//Si no está seteada la variable nombre_camarero volvemos al login.
