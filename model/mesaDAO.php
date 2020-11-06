@@ -21,11 +21,10 @@ class MesaDao{
 			$nmesa="Mesa: ";
 		if ($mesa['disponible_mesa']==1) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
-			echo "<div style=float:left;display:block;position:relative;>";
-			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;'>";
+			echo "<div style='float:left; position:relative;'>";
+			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px; border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
-			echo "</div>";
+			echo "<div style='position:absolute; top:45%; left:35%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			
 			// echo "<tr style='color:green;text-align:center;'>";
@@ -33,10 +32,10 @@ class MesaDao{
 			// echo "<td>{$mesa['plazas_mesa']}</td>";
 			// echo "<td>{$mesa['disponible_mesa']}</td>";
 			// echo "</tr>";
-		} else {
+		} else if ($mesa['disponible_mesa']==0){
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style=float:left;display:block;position:relative;>";
-			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;'>";
+			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
 			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
@@ -72,16 +71,16 @@ class MesaDao{
 		if ($mesa['disponible_mesa']==1) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style=float:left;display:block;position:relative;>";
-			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;'>";
+			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
 			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
-		} else {
+		} else if ($mesa['disponible_mesa']==0) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style=float:left;display:block;position:relative;>";
-			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;'>";
+			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
 			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";

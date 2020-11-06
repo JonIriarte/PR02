@@ -29,11 +29,13 @@
     	$actdisponible= new MesaDao();
     	$actualizar=$actdisponible->updateDisponible();
     }
-  	?><div id="volver"><h2><a href="./zona.admin.php">VOLVER</h2></a></div>
+  	?>
+	  
+	<h2 class="volver"><a href="./zona.admin.php">Volver a atrás</h2></a>
 
 	<form action="./modificar.php" method="POST" class="reser">
     	<div class="id"><label for="id_mesa">Mesa:</label><br></div>
-    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br><br>
+    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled>
     	<input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
     	<input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
     	<input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
