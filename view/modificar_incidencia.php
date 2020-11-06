@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Acabar incidencia</title>
+	<title>Control de incidencias</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" type="text/css" href="../css/mantenimiento.css">
 </head>
 <body>
+<div class="body"></div>
+
+<h1 class="titulo">Control de incidencias</h1>
+
     <?php
         require_once '../controller/session_controller.php';
     ?>
