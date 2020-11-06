@@ -7,6 +7,9 @@
   	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <body>
+
+<h1 class="titulo">Página Principal</h1>
+
 	<?php
 		require_once '../controller/session_controller.php';
 	?>

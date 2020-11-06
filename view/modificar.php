@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <h1 class="titulo">Reservar mesa</h1>
+
 	<?php
 		require_once '../controller/session_controller.php';
 		$id_camarero=$_SESSION['nombre']->getIdCamarero();
@@ -44,16 +46,17 @@
     	<input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
     	<input type="submit" value="<?php echo $boton;?>" name="b_actualizar">
 	</form>
-     <form action="./modificar.php" method="POST" class="reser">
+     <form action="./modificar.php" method="POST" class="inci">
         <div class="id"><label for="id_mesa">Mesa:</label><br></div>
-        <input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
-        <div class="id"><label for="descripcion_incidencia">Descripción:</label><br></div>
-        <input type="text" name="descripcion_incidencia" placeholder="Descripcion incidencia"><br>
+        <input style="margin-bottom: 5%;" type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
+        <div class="disp"><label for="descripcion_incidencia">Descripción:</label><br></div>
+        <input class="caja" type="text" name="descripcion_incidencia" placeholder="Descripción incidencia"><br>
         <input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
         <input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
         <input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
         <input type="submit" value="Incidencia" name="b_incidencia">
     </form>  
+    <br><br>
 	<div class="body"></div>
 </body>
 </html>

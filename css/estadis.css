@@ -48,3 +48,8 @@ table {
     border-radius: 30px;
     float: left;
   }
+
+  .titulo {
+    text-align: center;
+    font-size: 400%;
+}

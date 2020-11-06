@@ -11,6 +11,8 @@
 
 <div class="body"></div>
 
+<h1 class="titulo">Estadísticas</h1>
+
 	<?php 
 		require_once '../controller/session_controller.php'; 
 	?>
