@@ -13,9 +13,9 @@
 		$id_camarero=$_SESSION['nombre']->getIdCamarero();
 	?>
 	
-	
 	<?php
 	require_once "../model/mesaDAO.php";
+    require_once "../model/incidenciaDAO.php";
 	$mesadao = new MesaDao();
 	$mesa1=$_GET['id_mesa'];
     //$mesa=$mesadao->lecturamesa($_GET['id_mesa']);
@@ -29,18 +29,37 @@
     	$actdisponible= new MesaDao();
     	$actualizar=$actdisponible->updateDisponible();
     }
+    if (isset($_POST['descripcion_incidencia'])) {
+        $insertIncidencia= new IncidenciaDao();
+        $insertar=$insertIncidencia->insertIncidencia();
+    }
   	?>
-	  
-	<h2 class="volver"><a href="./zona.admin.php">Volver a atrás</h2></a>
+    <h2 class="volver"><a href="./zona.admin.php">Volver atrás</h2></a>
 
 	<form action="./modificar.php" method="POST" class="reser">
     	<div class="id"><label for="id_mesa">Mesa:</label><br></div>
-    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled>
+    	<input type="text" name="" value="<?php echo $mesa1;?>" disabled><br><br>
     	<input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
     	<input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
     	<input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
     	<input type="submit" value="<?php echo $boton;?>" name="b_actualizar">
-	</form> 
+	</form>
+     <form action="./modificar.php" method="POST" class="reser">
+        <div class="id"><label for="id_mesa">Mesa:</label><br></div>
+        <input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
+        <div class="id"><label for="descripcion_incidencia">Descripción:</label><br></div>
+        <input type="text" name="descripcion_incidencia" placeholder="Descripcion incidencia"><br>
+        <div class="id"><label for="estado_incidencia">Estado:</label><br></div>
+        <select name="estado_incidencia">
+            <option value="abierta">Abierta</option>
+            <option value="en progreso">En progreso</option>
+            <option value="solucionada">Solucionada</option>
+        </select>
+        <input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
+        <input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
+        <input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >
+        <input type="submit" value="Incidencia" name="b_incidencia">
+    </form>  
 	<div class="body"></div>
 </body>
 </html>

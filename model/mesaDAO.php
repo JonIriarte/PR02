@@ -132,14 +132,16 @@ class MesaDao{
 				$stmt->bindParam(3,$id);
 				$stmt->execute();
 	        }
-	        $query="UPDATE `mesa` SET `disponible_mesa`=? WHERE `id_mesa` = ?;";
-	        $sentencia1=$pdo->prepare($query);
-	        $sentencia1->bindParam(1,$disponible);
-	        $sentencia1->bindParam(2,$id);
-	        $sentencia1->execute();
-	        print_r($sentencia1);
-	        $pdo->commit();
-	        header("Location: ../view/zona.admin.php");
+	        if (isset($_POST['b_actualizar'])) {
+	        	$query="UPDATE `mesa` SET `disponible_mesa`=? WHERE `id_mesa` = ?;";
+	        	$sentencia1=$pdo->prepare($query);
+	        	$sentencia1->bindParam(1,$disponible);
+	        	$sentencia1->bindParam(2,$id);
+	        	$sentencia1->execute();
+	        	print_r($sentencia1);
+	        	$pdo->commit();
+	       	 	header("Location: ../view/zona.admin.php");
+	        }
     	} catch (Exception $e) {
         	$pdo->rollBack();
         	echo $e;
