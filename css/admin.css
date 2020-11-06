@@ -60,6 +60,10 @@ button {
     float: left;
 }
 
+button a{
+    text-decoration: none;
+}
+
 button:hover {
     background-color: #3e8e41;
 }
