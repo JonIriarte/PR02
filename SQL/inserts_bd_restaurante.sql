@@ -41,3 +41,8 @@ INSERT INTO `camarero` ( `nombre`, `password`) VALUES
 ('camarero1', '1fa3356b1eb65f144a367ff8560cb406'),
 ('camarero2', '1fa3356b1eb65f144a367ff8560cb406'),
 ('camarero3', '1fa3356b1eb65f144a367ff8560cb406');
+
+
+INSERT INTO `mantenimiento` (`id_mantenimiento`, `nombre`, `password`) VALUES
+(1, 'mantenimiento1', '1fa3356b1eb65f144a367ff8560cb406'),
+(2, 'mantenimiento2', '1fa3356b1eb65f144a367ff8560cb406');

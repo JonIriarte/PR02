@@ -30,9 +30,15 @@ CREATE TABLE `reserva` (
 CREATE TABLE `incidencia` (
   `id_incidencia` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `descripcion_incidencia` text NOT NULL,
-  `estado_incidencia` enum('abierta','solucionada','en progreso','cerrada') NOT NULL,
+  `estado_incidencia` enum('abierta','solucionada') NOT NULL,
   `fecha_incidencia` datetime NOT NULL,
   `id_mesa` int(11) NOT NULL COMMENT 'Depende de la tabla "Mesa"', 
   Constraint fk_id_incidencia FOREIGN KEY (id_mesa)
   references mesa(id_mesa)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `mantenimiento` (
+  `id_mantenimiento` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
