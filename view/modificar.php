@@ -49,12 +49,6 @@
         <input type="text" name="" value="<?php echo $mesa1;?>" disabled><br>
         <div class="id"><label for="descripcion_incidencia">Descripción:</label><br></div>
         <input type="text" name="descripcion_incidencia" placeholder="Descripcion incidencia"><br>
-        <div class="id"><label for="estado_incidencia">Estado:</label><br></div>
-        <select name="estado_incidencia">
-            <option value="abierta">Abierta</option>
-            <option value="en progreso">En progreso</option>
-            <option value="solucionada">Solucionada</option>
-        </select>
         <input type="hidden" name="disponible_mesa" id="disponible_mesa" value="<?php echo $mesa['disponible_mesa'];?>"><br><br>
         <input type="hidden" name="id_mesa" value="<?php echo $mesa1;?>" >
         <input type="hidden" name="id_camarero" value="<?php echo $id_camarero;?>" >

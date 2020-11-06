@@ -17,11 +17,10 @@ class IncidenciaDao{
 	        $id_camarero=$_POST['id_camarero'];
 	        $curdate=date("Y/m/d H:i:s");
 	        echo $id;
-	        $stmt=$pdo->prepare("INSERT INTO `incidencia` (`id_incidencia`, `descripcion_incidencia`, `estado_incidencia`, `fecha_incidencia`, `id_mesa`) VALUES (NULL, ?, ?, ?, ?);");
+	        $stmt=$pdo->prepare("INSERT INTO `incidencia` (`id_incidencia`, `descripcion_incidencia`, `estado_incidencia`, `fecha_incidencia`, `id_mesa`) VALUES (NULL, ?, 'abierta', ?, ?);");
 	        $stmt->bindParam(1,$descripcion_incidencia);
-	        $stmt->bindParam(2,$estado_incidencia);
-			$stmt->bindParam(3,$curdate);
-			$stmt->bindParam(4,$id);
+			$stmt->bindParam(2,$curdate);
+			$stmt->bindParam(3,$id);
 			$stmt->execute();
 	        $query="UPDATE `mesa` SET `disponible_mesa`=2 WHERE `id_mesa` = ?;";
 	        $sentencia1=$pdo->prepare($query);
