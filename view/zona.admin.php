@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<h1 class="titulo">Página Principal</h1>
+<h1 class="titulo">Página principal</h1>
 
 	<?php
 		require_once '../controller/session_controller.php';

@@ -81,7 +81,7 @@ class IncidenciaDao{
 
     public function lecturaincidencia($id){
    		include '../model/connection.php';
-        $query = "SELECT * FROM incidencia WHERE id_mesa=6 ORDER BY `id_incidencia` desc limit 1;";
+        $query = "SELECT * FROM incidencia WHERE id_mesa=? ORDER BY `id_incidencia` desc limit 1;";
         $sentencia=$pdo->prepare($query);
         $sentencia->bindParam(1,$id);
         $sentencia->execute();

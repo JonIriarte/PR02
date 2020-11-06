@@ -32,7 +32,7 @@
 	<form action="./modificar_incidencia.php" method="POST" class="reser">
     	<div class="id"><label for="id_mesa">Mesa:</label><br></div>
     	<input type="text" name="" value="<?php echo $incidencia1;?>" disabled><br><br>
-    	<div class="id"><label for="descripcion_incidencia">Descripcion:</label><br></div>
+    	<div class="id"><label for="descripcion_incidencia">Descripción:</label><br></div>
     	<input type="text" name="" value="<?php echo $incidencia['descripcion_incidencia'];?>" disabled><br><br>
     	<input type="hidden" name="descripcion_incidencia" value="<?php $incidencia['descripcion_incidencia'];?>" >
     	<input type="hidden" name="id_mesa" value="<?php echo $incidencia1;?>" >
