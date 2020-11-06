@@ -5,7 +5,8 @@
 	- David Juan Aranda 
 - https://github.com/PabloSorianoAnton/Proyecto-DeuxMoulins.git
 
-- Usuarios/pass
+- USUARIOS/PASSWORD
+
 - Camareros:
 	- camarero1: qweQWE123
 	- camarero2: qweQWE123
