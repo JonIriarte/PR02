@@ -79,5 +79,15 @@ class IncidenciaDao{
         	echo $e;
     	}
     }
+
+    public function lecturaincidencia($id){
+   		include '../model/connection.php';
+        $query = "SELECT * FROM incidencia WHERE id_mesa=?";
+        $sentencia=$pdo->prepare($query);
+        $sentencia->bindParam(1,$id);
+        $sentencia->execute();
+        $incidencia=$sentencia->fetch(PDO::FETCH_ASSOC);
+        return $incidencia;
+    }
 }
 ?>
