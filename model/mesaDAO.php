@@ -37,7 +37,7 @@ class MesaDao{
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:35%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
@@ -73,7 +73,7 @@ class MesaDao{
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:35%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
@@ -82,7 +82,7 @@ class MesaDao{
 			echo "<div style=float:left;display:block;position:relative;>";
 			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
 			echo "</a>";
-			echo "<div style='position:absolute;top: 45%;left:30%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
+			echo "<div style='position:absolute;top: 45%;left:35%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
 			echo "</div>";
 			echo "</div>";
 			
