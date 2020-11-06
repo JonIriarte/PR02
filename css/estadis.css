@@ -19,6 +19,7 @@ table {
   th, td {
     text-align: center;
     padding: 8px;
+    border: 1px solid black;
   }
   
   tr {
@@ -28,11 +29,22 @@ table {
   }
   
   th {
-    background-color: #4CAF50;
+    background-color: #a05000;
     color: white;
+    border: 5px solid black;
   }
 
-.est {
-    width: 30%;
-    margin-left: 35%;
-}
+  .est {
+      width: 30%;
+      margin-left: 35%;
+  }
+
+  .volver {
+    width: 15%;
+    margin-left: 7%;
+    border: 2px solid black;
+    text-align: center;
+    background-color: grey;
+    border-radius: 30px;
+    float: left;
+  }

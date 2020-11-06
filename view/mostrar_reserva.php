@@ -15,7 +15,7 @@
 		require_once '../controller/session_controller.php'; 
 	?>
 
-	<div id=volver><h2><a href="./zona.admin.php">VOLVER</h2></a></div>  
+	<h2 class="volver"><a href="./zona.admin.php">Volver a atrás</h2></a>
 	<table cellpadding="6" cellspacing="6" class="est">
 		<tr>
 			<th>Mesa</th>

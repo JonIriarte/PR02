@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title></title>
+	<title>Deux Moulins</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link rel="stylesheet" type="text/css" href="../css/admin.css">
 </head>
 <body>
 	<?php
 		require_once '../controller/session_controller.php';
 	?>
-	<button><a href="./mostrar_reserva.php">Reserva</a></button>
-	<br><br>
+	<button><a href="./mostrar_reserva.php">Reservas</a></button>
+
 	<form action="./zona.admin.php" method="POST">
 		<?php
   		include '../model/connection.php';
@@ -21,11 +24,14 @@
 			echo "<option value='".$lugar['lugar_mesa']."'>".$lugar['lugar_mesa']."</option>";
 		}
 			echo "<option selected value='Todos'>Todos</option>";
-		echo "</select><br><br>";
+		echo "</select><br>";
 		?>
-	<input type="checkbox" id="disponible" name="disponible" value="disponible">
-	<label for="disponible"> Disponible</label><br><br>
-	<input type="submit" value="Filtrar" name="b_filtro"><br><br>
+	<div class="form">
+		<input type="checkbox" id="disponible" name="disponible" value="disponible">
+	</div>
+	<label for="disponible"> Disponible</label><br>
+	<input type="submit" value="Filtrar" name="b_filtro">
+	</form>
 	<?php
 		include '../model/mesaDAO.php';
 		if (empty($_POST['b_filtro'])){
@@ -36,8 +42,9 @@
 			echo $mostrar_mesa->mostrar();
 		} else if ($_POST['lugares']!='Todos'){
         	$filtros_alu=new MesaDao;
-        	$filtros_alu->filtroLugar();
+        	echo $filtros_alu->filtroLugar();
  		}
 	?>
+	<div class="body"></div>
 </body>
 </html>
