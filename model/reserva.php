@@ -1,4 +1,3 @@
-
 <?php
 
 class Reserva {
@@ -12,11 +11,11 @@ class Reserva {
         private $id_mesa;
 
         //Constructor
-        public function __construct($fecha_reserva,$hora_reserva){
+        public function __construct($fecha_reserva,$hora_reserva,$nombre_reserva,$telefono_reserva){
             $this->fecha_reserva=$fecha_reserva;
             $this->hora_reserva=$hora_reserva;
-        
-	 	
+            $this->nombre_reserva=$nombre_reserva;
+            $this->telefono_reserva=$telefono_reserva;
     /**
      * @return mixed
      */
