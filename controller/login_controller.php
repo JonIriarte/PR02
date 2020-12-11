@@ -1,14 +1,11 @@
 <?php
-include '../model/camarero.php';
-include '../model/camareroDAO.php';
-include '../model/mantenimiento.php';
-include '../model/mantenimientoDAO.php';
+include '../model/usuario.php'; 
+include '../model/usuarioDAO.php';
 if (isset($_POST['nombre'])) {
-    $camarero = new Camarero($_POST['nombre'], md5($_POST['password']));
-    $camareroDAO = new CamareroDao();
-    $mantenimiento = new Mantenimiento($_POST['nombre'], md5($_POST['password']));
-    $mantenimientoDAO = new MantenimientoDao();
-    if($camareroDAO->login($camarero)){
+    $usuario = new Usuario($_POST['email'], md5($_POST['password']),($_POST['profile']);
+    $usuarioDAO = new UsuarioDao();
+   
+    if($UsuarioDAO->login($usuario)){
         echo 'perfect';
         // establecer sesiones
         // redirección a la zona de administración mesas
