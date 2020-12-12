@@ -8,7 +8,7 @@ class UsuarioDao{
         include 'connection.php';
         $this->pdo=$pdo;
     }
-
+    //Función para hacer login
     public function login($user){
         $query = "SELECT * FROM tbl_user WHERE `email_user`=? AND `password_user`=?";
         $sentencia=$this->pdo->prepare($query);
@@ -32,7 +32,11 @@ class UsuarioDao{
             $_SESSION['nombre']=$user->getNombre();
             $_SESSION['profile']=$user->getProfile();
             $_SESSION['status']=$user->getStatus();
-          return true;
+            echo $_SESSION['id']; 
+            echo $_SESSION['nombre'];
+            echo $_SESSION['profile'];
+            echo $_SESSION['status'];
+          //return true;
         } else {
             return false;
         }
