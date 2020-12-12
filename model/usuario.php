@@ -1,5 +1,5 @@
 <?php
-abstract class Usuario{
+class Usuario{
     //Atributos
     private $id;
     private $password;
@@ -9,13 +9,9 @@ abstract class Usuario{
     private $status; 
     private $profile; 
     
-    public function __construct($nombre,$apellido,$email, $password, $status,$profile){
-        $this->nombre=$nombre;
-        $this->apellido=$apellido;
+    public function __construct($email, $password){
         $this->email=$email; 
-        $this->password=$password;
-        $this->status=$status; 
-        $this->profile=$profile;  
+        $this->password=$password;  
     }
 
 

@@ -19,8 +19,7 @@ class Reserva {
     /**
      * @return mixed
      */
-    public function getIdReserva()
-    {
+    public function getIdReserva() {
         return $this->id_reserva;
     }
 
