@@ -37,6 +37,41 @@ class UsuarioDao{
             return false;
         }
     }
+    //CRUD para los usuarios
+    public function createUser(){
+
+
+
+    }
+    
+    public function readUser(){
+        //Función para ver todos los usuarios que hay en la BD
+        $query = "SELECT id_user,email_user,nombre_user,apellido_user,status_user,profile_user FROM tbl_user"; 
+        $sentencia=$this->pdo->prepare($query);
+        $sentencia->execute();
+        $result=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+        echo "<table>"; 
+    echo "<th>"; 
+    echo "<td>Id</td>";
+    echo "<td>Email</td>";
+    echo "<td>Nombre</td>";
+    echo "<td>Apellido</td>";
+    echo "<td>Estado</td>"; 
+    echo "<td>Perfil</td>"; 
+    echo "</th>";
+         foreach ($result as $user){
+            $id=$user['id_user']; 
+            echo "<tr>"; 
+            echo "<td>".$user['id_user']."</td>"; 
+            echo "<td>".$user['email_user']."</td>";
+            echo "<td>".$user['nombre_user']."</td>";
+            echo "<td>".$user['apellido_user']."</td>";
+            echo "<td>".$user['status_user']."</td>";
+            echo "<td>".$user['profile_user']."</td>";
+
+         }
+    }
+
 }
 
 ?>

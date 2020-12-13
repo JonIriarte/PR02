@@ -13,6 +13,9 @@
     <h1>ADMINISTRACIÓN</h1>
 
     <h2>USUARIOS</h2>
-
+    <?php
+		$mostrar_usuarioss=new UsuarioDao;
+		echo $mostrar_usuarioss->readUser();
+	?>
 </body>
 </html>
