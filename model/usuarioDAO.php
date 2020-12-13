@@ -32,11 +32,7 @@ class UsuarioDao{
             $_SESSION['nombre']=$user->getNombre();
             $_SESSION['profile']=$user->getProfile();
             $_SESSION['status']=$user->getStatus();
-            echo $_SESSION['id']; 
-            echo $_SESSION['nombre'];
-            echo $_SESSION['profile'];
-            echo $_SESSION['status'];
-          //return true;
+          return true;
         } else {
             return false;
         }

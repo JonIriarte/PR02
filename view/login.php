@@ -21,7 +21,7 @@
   <div class="login">
     <form action="../controller/login_controller.php" method="POST" onsubmit="return validacionForm()">
       <label for="email"></label>
-      <input type="text" id="email" name="email" placeholder="Email">
+      <input type="text" id="email" name="email" placeholder="Usuario">
     <br><br>
       <label for="password"></label>
       <input type="password" id="password" name="password" placeholder="Contraseña">

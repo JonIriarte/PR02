@@ -6,14 +6,13 @@
     <title>Administración</title>
 </head>
 <body>
-    <h1>ADMINISTRACIÓN</h1>
-    <?php
+<?php
 		require_once '../controller/session_controller.php';
 	?>
 
+    <h1>ADMINISTRACIÓN</h1>
+
     <h2>USUARIOS</h2>
-
-
 
 </body>
 </html>
