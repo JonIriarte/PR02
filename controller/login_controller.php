@@ -26,7 +26,7 @@ if (isset($_POST['email'])) {
         //echo "fallo";
     }
 } else {
- //  header('Location: ../view/login.php');
-    echo " no entra en el primer if";
+    header('Location: ../view/login.php');
+    //echo " no entra en el primer if";
 }
 }
