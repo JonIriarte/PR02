@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración</title>
+    <title>MODIFICAR USUARIO</title>
 </head>
 <body>
-<?php
-		require_once '../controller/session_controller.php';
-	?>
-
-    <h1>ADMINISTRACIÓN</h1>
-
-    <?php
-		$mostrar_usuarios=new UsuarioDao;
-        echo $mostrar_usuarios->readUser();
-	?>
-
-    <h3>CREAR USUARIO</h3>
-    <form action="crearUsuario.php" method="POST">
+        <?php
+         require_once '../controller/session_controller.php';
+         $id=$_GET['id_user']; 
+        $mostrar_usuario=New UsuarioDao; 
+         echo $mostrar_usuario->readIdUser($id); 
+        ?>
+        <form action="UpdateIdUser.php" method="POST">
         <label for="nombre"></label>
         <input type="text" name="nombre" placeholder="Nombre" required>
         <label for="apellido"></label>
@@ -43,7 +37,5 @@
         <br><br>
         <input type="submit" id="submit" value="Entrar">
         </form>
-        <br><br>
-    <h3>USUARIOS</h3>
 </body>
 </html>
