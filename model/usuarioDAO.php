@@ -112,8 +112,13 @@ class UsuarioDao{
          }
     }
     //Cambiar los datos del usuario  que se ha mostrado en readIdUser() en la BD
-    public function updateIdUser(){
-        
+    public function updateIdUser($id,$nombre,$apellido,$email,$password,$status,$profile){
+        $query="UPDATE tbl_user SET nombre_user=? , email_user=? WHERE id_user=?;";
+        $sentencia=$pdo->prepare($query);
+        $sentencia->bindParam(1,$name);
+        $sentencia->bindParam(2,$email);
+        $sentencia->bindParam(3,$id);
+        $sentencia->execute();
 
 
     } 
