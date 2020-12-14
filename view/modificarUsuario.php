@@ -35,6 +35,7 @@
             <option value="Trabaja">Trabaja</option>
         </select>
         <br><br>
+        <input type="hidden" name="id" value="<?php echo $id;?>"><br>
         <input type="submit" id="submit" value="Entrar">
         </form>
 </body>

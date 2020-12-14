@@ -53,6 +53,7 @@ class UsuarioDao{
             $sentencia->execute();
             header('Location:../view\zona.admin.php');
         } catch (\Throwable $th) {
+            echo $th; 
             header('Location:../view\zona.admin.php' ); 
         }
     }
@@ -113,13 +114,17 @@ class UsuarioDao{
     }
     //Cambiar los datos del usuario  que se ha mostrado en readIdUser() en la BD
     public function updateIdUser($id,$nombre,$apellido,$email,$password,$status,$profile){
-        $query="UPDATE tbl_user SET nombre_user=? , email_user=? WHERE id_user=?;";
-        $sentencia=$pdo->prepare($query);
-        $sentencia->bindParam(1,$name);
-        $sentencia->bindParam(2,$email);
-        $sentencia->bindParam(3,$id);
+        $query="UPDATE tbl_user SET email_user=?,password_user=?,nombre_user=?,apellido_user=?,status_user=?,profile_user=? WHERE id_user=? ;"; 
+        $sentencia=$this->pdo->prepare($query);
+        $sentencia->bindParam(1,$email);
+        $sentencia->bindParam(2,$password);
+        $sentencia->bindParam(3,$nombre);
+        $sentencia->bindParam(4,$apellido);
+        $sentencia->bindParam(5,$status);
+        $sentencia->bindParam(6,$profile);
+        $sentencia->bindParam(7,$id);
         $sentencia->execute();
-
+        header('Location:../view\zona.admin.php');
 
     } 
     //Borrar usuario de la BD
