@@ -8,11 +8,12 @@
 </head>
 <body>
 
-<h1 class="titulo">Página principal</h1>
+
 
 	<?php
 		require_once '../controller/session_controller.php';
 	?>
+	<h1 class="titulo">Página principal</h1>
 	<!-- Formulairo para hacer reservas -->
 	<form action="./hacer_reserva.php" method="POST">
 		<label for="dia">DÍA</label>
@@ -55,7 +56,7 @@
 		<input type="submit" value="Reservar" >
 	</form>
 
-	<div class="body">
+	<div class="row">
 		<div class="column" >
 			<h2>RESERVAS</h2>
 			<p>Aquí se van a mostrar las resevras</p>
