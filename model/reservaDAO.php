@@ -4,8 +4,8 @@ class ReservaDao{
     private $pdo;
 
     public function __construct(){
-        //include './model/connection.php';
-        //$this->pdo=$pdo;
+        include '../model/connection.php';
+        $this->pdo=$pdo;
     }
     public function mostrarReservas(){
     	include '../model/connection.php';
@@ -41,4 +41,24 @@ class ReservaDao{
 			echo "</tr>";
 		}
 	}
+		public function hacerReserva($dia,$hora,$nombre,$telefono,$id_mesa){
+			try {
+				$query="INSERT INTO `tbl_reserva` (`fecha_reserva`,`hora_reserva`,`nombre_reserva`,`telf_reserva`,`id_mesa`) VALUES (?,?,?,?,?); "; 
+				$sentencia=$this->pdo->prepare($query); 
+				$sentencia->bindParam(1,$dia); 
+				$sentencia->bindParam(2,$hora);
+				$sentencia->bindParam(3,$nombre);
+				$sentencia->bindParam(4,$telefono);
+				$sentencia->bindParam(5,$id_mesa);
+				$sentencia->execute(); 
+				
+				echo "todo OK"; 
+
+			} catch (\Throwable $th) {
+				print_r($sentencia); 
+				echo "Catch<br>"; 
+				 echo $th; 
+			}
+		}		
+
 }

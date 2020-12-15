@@ -9,7 +9,7 @@ class MesaDao{
     }
     public function mostrar(){
     	include '../model/connection.php';
-    	$sql="SELECT * FROM mesa";
+    	$sql="SELECT * FROM tbl_mesa";
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
 
@@ -19,7 +19,6 @@ class MesaDao{
 			$lugar="Ubicación: ";
 			$ocup="Asientos: ";
 			$nmesa="Mesa: ";
-		if ($mesa['disponible_mesa']==1) {
 			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
 			echo "<div style='float:left; position:relative;'>";
 			echo "<img src='../img/mesa_verde.png' style='width:250px;height:250px; border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
@@ -32,14 +31,6 @@ class MesaDao{
 			// echo "<td>{$mesa['plazas_mesa']}</td>";
 			// echo "<td>{$mesa['disponible_mesa']}</td>";
 			// echo "</tr>";
-		} else if ($mesa['disponible_mesa']==0){
-			echo "<a href='../view/modificar.php?id_mesa={$id}'>";
-			echo "<div style=float:left;display:block;position:relative;>";
-			echo "<img src='../img/mesa_roja.png' style='width:250px;height:250px;border: 2px solid black; background-color: lightskyblue; opacity: 0.9; margin-left: 10%; margin-bottom: 5%;'>";
-			echo "</a>";
-			echo "<div style='position:absolute;top: 45%;left:35%;'>".$nmesa.$mesa['id_mesa']."<br>".$lugar.$mesa['lugar_mesa']."<br>".$ocup.$mesa['plazas_mesa']."</div>";
-			echo "</div>";
-			echo "</div>";
 			
 			// echo "<tr style='color:red;text-align:center;'>";
 			// echo "<td>{$mesa['lugar_mesa']}</td>";
@@ -49,15 +40,14 @@ class MesaDao{
 		}
 
    		}
-	}
 
 	public function filtroLugar(){
 		include '../model/connection.php';
 		if (!empty($_POST['disponible'])) {
 			$disponible = 1;
-			$sql="SELECT * FROM mesa where lugar_mesa LIKE '%{$_POST['lugares']}%' AND disponible_mesa LIKE '%{$disponible}%' ";
+			$sql="SELECT * FROM tbl_mesa where lugar_mesa LIKE '%{$_POST['lugares']}%' AND disponible_mesa LIKE '%{$disponible}%' ";
 		} else {
-			$sql="SELECT * FROM mesa where lugar_mesa LIKE '%{$_POST['lugares']}%' ";
+			$sql="SELECT * FROM tbl_mesa where lugar_mesa LIKE '%{$_POST['lugares']}%' ";
 		}
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
@@ -93,7 +83,7 @@ class MesaDao{
 
 	public function lecturamesa($id){
    		include '../model/connection.php';
-        $query = "SELECT * FROM mesa WHERE id_mesa=?";
+        $query = "SELECT * FROM tbl_mesa WHERE id_mesa=?";
         $sentencia=$pdo->prepare($query);
         $sentencia->bindParam(1,$id);
         $sentencia->execute();

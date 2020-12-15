@@ -13,41 +13,53 @@
 	<?php
 		require_once '../controller/session_controller.php';
 	?>
-	<button><a href="./mostrar_reserva.php">Reservas</a></button>
-
-	<form action="./zona.admin.php" method="POST">
-		<?php
-  		include '../model/connection.php';
-		$sql="SELECT distinct lugar_mesa FROM mesa";
-		$sentencia=$pdo->prepare($sql);
-		$sentencia->execute();
-		$lista_filtro=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-		echo "<select name='lugares' style='float:left';>";
-		foreach ($lista_filtro as $lugar) {
-			echo "<option value='".$lugar['lugar_mesa']."'>".$lugar['lugar_mesa']."</option>";
-		}
-			echo "<option selected value='Todos'>Todos</option>";
-		echo "</select><br>";
-		?>
-	<div class="form">
-		<input type="checkbox" id="disponible" name="disponible" value="disponible">
-	</div>
-	<label for="disponible"> Disponible</label><br>
-	<input type="submit" value="Filtrar" name="b_filtro">
+	<!-- Formulairo para hacer reservas -->
+	<form action="./hacer_reserva.php" method="POST">
+		<label for="dia">DÍA</label>
+		<input type="date" id="dia" name="dia" required>
+		<label for="hora">HORA</label >
+		<select name="hora" id="hora" required>
+			<option >-----</option>
+			<option value="13">13:00</option>
+			<option value="14">14:00</option>
+			<option value="15">15:00</option>
+			<option value="20">20:00</option>
+			<option value="21">21:00</option>
+		</select>
+		<br>
+		<label for="mesa">MESA</label>
+		<select name="mesa" id="mesa" required>
+			<option >-----</option>
+			<option value="1">1 -1 plaza</option>
+			<option value="2">2 -1 plaza</option>
+			<option value="3">3 -1 plaza</option>
+			<option value="4">4 -1 plaza</option>
+			<option value="5">5 -2 plazas</option>
+			<option value="6">6 -2 plazas</option>
+			<option value="7">7 -2 plazas</option>
+			<option value="8">8 -2 plazas</option>
+			<option value="9">9 -2 plazas</option>
+			<option value="10">10 -2 plazas</option>
+			<option value="11">11 -4 plazas</option>
+			<option value="12">12 -4 plazas</option>
+			<option value="13">13 -4 plazas</option>
+			<option value="14">14 -4 plazas</option>
+			<option value="15">15 -2 plazas</option>
+			<option value="16">16 -2 plazas</option>
+		</select>
+		<br>
+		<label for="nombre">NOMBRE</label>
+		<input type="text" id="nombre" name="nombre" required><br>
+		<label for="telefono">TELÉFONO</label>
+		<input type="number" name="telefono" id="telefono" required>
+		<input type="submit" value="Reservar" >
 	</form>
-	<?php
-		include '../model/mesaDAO.php';
-		if (empty($_POST['b_filtro'])){
-			$mostrar_mesa=new MesaDao;
-			echo $mostrar_mesa->mostrar();
-		} else if ($_POST['lugares']=='Todos') {
-    		$mostrar_mesa=new MesaDao;
-			echo $mostrar_mesa->mostrar();
-		} else if ($_POST['lugares']!='Todos'){
-        	$filtros_alu=new MesaDao;
-        	echo $filtros_alu->filtroLugar();
- 		}
-	?>
-	<div class="body"></div>
+
+	<div class="body">
+		<div class="column" >
+			<h2>RESERVAS</h2>
+			<p>Aquí se van a mostrar las resevras</p>
+  		</div>
+	</div>
 </body>
 </html>

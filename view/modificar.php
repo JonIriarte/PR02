@@ -12,7 +12,7 @@
 
 	<?php
 		require_once '../controller/session_controller.php';
-		$id_camarero=$_SESSION['nombre']->getIdCamarero();
+		$id_camarero=$_SESSION['id']; 
 	?>
 	
 	<?php
@@ -36,7 +36,7 @@
         $insertar=$insertIncidencia->insertIncidencia();
     } 
   	?>
-    <h2 class="volver"><a href="./zona.admin.php">Volver atrás</h2></a>
+    <h2 class="volver"><a href="./zona.camareros.php">Volver atrás</h2></a>
 
 	<form action="./modificar.php" method="POST" class="reser">
     	<div class="id"><label for="id_mesa">Mesa:</label><br></div>

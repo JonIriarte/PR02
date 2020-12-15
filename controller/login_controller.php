@@ -20,7 +20,7 @@ if (isset($_POST['email'])) {
         echo 'perfect';
         // establecer sesiones
         // redirección a la zona de de camareros
-        header('Location: view\zona.camareros.php');    
+        header('Location:../view\zona.camareros.php');    
     } else {
        header('Location: ../view/login.php');//sino está bien hecho el login volvemos a la página de login.
         //echo "fallo";

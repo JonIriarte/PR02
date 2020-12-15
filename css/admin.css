@@ -1,10 +1,9 @@
-.body{
+.body {
     position: fixed;
-	top: -20px;
-	left: -20px;
-	right: -40px;
-	bottom: -40px;
-    background-image: url(../img/intro.png);
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
     background-size: 100% 100%;
     filter: blur(8px);
     z-index: -1;
@@ -14,7 +13,7 @@ form {
     border: 3px solid black;
     width: 25%;
     margin-left: 37.5%;
-    background-color: #c7b446; 
+    background-color: #c7b446;
     text-align: left;
     font-size: 150%;
     margin-bottom: 3%;
@@ -60,7 +59,7 @@ button {
     float: left;
 }
 
-button a{
+button a {
     text-decoration: none;
 }
 
@@ -69,12 +68,19 @@ button:hover {
 }
 
 button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .titulo {
     text-align: center;
     font-size: 400%;
+}
+
+.column {
+    background-color: #aaa;
+    float: center;
+    width: 100%;
+    padding: 10px;
 }
