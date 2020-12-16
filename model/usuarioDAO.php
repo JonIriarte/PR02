@@ -65,14 +65,12 @@ class UsuarioDao{
         $sentencia->execute();
         $result=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         echo "<table>"; 
-        echo "<th>"; 
         echo "<td style='text-align:center'>Id</td>";
         echo "<td style='text-align:center'>Email</td>";
         echo "<td style='text-align:center'>Nombre</td>";
         echo "<td style='text-align:center'>Apellido</td>";
         echo "<td style='text-align:center'>Estado</td>"; 
         echo "<td style='text-align:center'>Perfil</td>"; 
-        echo "</th>";
          foreach ($result as $user){
             $id=$user['id_user']; 
             echo "<tr>"; 
@@ -94,14 +92,12 @@ class UsuarioDao{
         $sentencia->execute(); 
         $result=$sentencia->fetchAll(PDO::FETCH_ASSOC);
         echo "<table>"; 
-        echo "<th>"; 
         echo "<td style='text-align:center'>Id</td>";
         echo "<td style='text-align:center'>Email</td>";
         echo "<td style='text-align:center'>Nombre</td>";
         echo "<td style='text-align:center'>Apellido</td>";
         echo "<td style='text-align:center'>Estado</td>"; 
         echo "<td style='text-align:center'>Perfil</td>"; 
-        echo "</th>";
          foreach ($result as $user){
             echo "<tr>"; 
             echo "<td>".$user['email_user']."</td>";
@@ -109,6 +105,7 @@ class UsuarioDao{
             echo "<td>".$user['apellido_user']."</td>";
             echo "<td>".$user['status_user']."</td>";
             echo "<td>".$user['profile_user']."</td>";
+            echo "/<tr>";
 
          }
     }

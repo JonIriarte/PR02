@@ -9,19 +9,29 @@ class ReservaDao{
     }
     public function mostrarReservas(){
     	include '../model/connection.php';
-    	$sql="SELECT reserva.id_reserva,reserva.fecha_reserva,reserva.fin_reserva,reserva.id_mesa,camarero.nombre from reserva INNER JOIN camarero on reserva.id_camarero=camarero.id_camarero order by id_reserva";
+    	$sql="SELECT id_reserva,telf_reserva,nombre_reserva,fecha_reserva,hora_reserva,id_mesa from tbl_reserva order by fecha_reserva ASC ";
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
 
 		$lista_reserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+			echo "<table>"; 
+			echo "<td style='text-align:center'>Id reserva</td>"; 
+			echo "<td style='text-align:center'>Teléfono de contacto</td>";
+			echo "<td style='text-align:center'>Nombre</td>";
+			echo "<td style='text-align:center'>Fecha</td>";
+			echo "<td style='text-align:center'>Hora</td>"; 
+			echo "<td style='text-align:center'>Mesa</td>"; 
+			
 		foreach ($lista_reserva as $reserva) {
-			$id_reserva=$reserva["id_mesa"]." ";
+			$id_reserva=$reserva["id_reserva"]." ";
 			echo "<tr>";
 			echo "<td style='text-align:center'>".$reserva['id_reserva']."</td>";
+			echo "<td style='text-align:center'>".$reserva['telf_reserva']."</td>";
+			echo "<td style='text-align:center'>".$reserva['nombre_reserva']."</td>";
 			echo "<td style='text-align:center'>".$reserva['fecha_reserva']."</td>";
-			echo "<td style='text-align:center'>".$reserva['fin_reserva']."</td>";
-			echo "<td style='text-align:center'>".$reserva['nombre']."</td>";
+			echo "<td style='text-align:center'>".$reserva['hora_reserva']."</td>";
 			echo "<td style='text-align:center'>".$reserva['id_mesa']."</td>";
+			//Hay que hacer un botón para eliminar reservas AQUÍ
 			echo "</tr>";
 		}
 	}
@@ -51,6 +61,7 @@ class ReservaDao{
 				$sentencia->bindParam(4,$telefono);
 				$sentencia->bindParam(5,$id_mesa);
 				$sentencia->execute(); 
+
 				
 				echo "todo OK"; 
 
@@ -59,6 +70,5 @@ class ReservaDao{
 				echo "Catch<br>"; 
 				 echo $th; 
 			}
-		}		
-
+		}
 }

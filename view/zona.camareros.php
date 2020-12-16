@@ -59,7 +59,13 @@
 	<div class="row">
 		<div class="column" >
 			<h2>RESERVAS</h2>
-			<p>Aquí se van a mostrar las resevras</p>
+			<p>
+				<?php 
+					include '../model/reservaDAO.php'; 
+					$mostrar_reservas=New ReservaDao; 
+					$reservas=$mostrar_reservas->mostrarReservas(); 
+					?>
+			</p>
   		</div>
 	</div>
 </body>

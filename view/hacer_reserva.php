@@ -8,11 +8,7 @@
             $nombre=$_POST['nombre']; 
             $telefono=$_POST['telefono']; 
             $id_mesa=$_POST['mesa']; 
-            echo $dia; 
-            echo $hora; 
-            echo $nombre; 
-            echo $telefono; 
-            echo $id_mesa; 
+            
 
             $mostrar_reserva=new reservaDAO; 
             $mostrar_reserva->hacerReserva($dia,$hora,$nombre,$telefono,$id_mesa); 
