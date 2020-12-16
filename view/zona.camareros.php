@@ -52,7 +52,7 @@
 		<label for="nombre">NOMBRE</label>
 		<input type="text" id="nombre" name="nombre" required><br>
 		<label for="telefono">TELÉFONO</label>
-		<input type="number" name="telefono" id="telefono" required>
+		<input type="text" name="telefono" id="telefono" required>
 		<input type="submit" value="Reservar" >
 	</form>
 

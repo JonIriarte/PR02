@@ -7,7 +7,6 @@ class Reserva {
         private $hora_reserva;
         private $nombre_reserva; 
         private $telefono_reserva; 
-        private $id_user;
         private $id_mesa;
 
         //Constructor
@@ -16,7 +15,8 @@ class Reserva {
             $this->hora_reserva=$hora_reserva;
             $this->nombre_reserva=$nombre_reserva;
             $this->telefono_reserva=$telefono_reserva;
-    /**
+        }
+            /**
      * @return mixed
      */
     public function getIdReserva() {

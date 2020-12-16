@@ -1,5 +1,6 @@
 <?php  
 require_once 'mesa.php';
+require_once 'reserva.php';
 class ReservaDao{
     private $pdo;
 
@@ -53,6 +54,13 @@ class ReservaDao{
 	}
 		public function hacerReserva($dia,$hora,$nombre,$telefono,$id_mesa){
 			try {
+				// $reserva=new Reserva($dia,$hora,$nombre,$telefono);
+				// $reserva->setIdMesa($id_mesa);
+				$prequery="SELECT * FROM tbl_reserva WHERE fecha_reserva='$dia' AND hora_reserva='$hora' AND id_mesa='$id_mesa'"; 
+				$prequery=$this->pdo->prepare($prequery); 
+				$prequery->execute(); 
+				$count=$prequery->rowCount();  
+				if ($count==0){
 				$query="INSERT INTO `tbl_reserva` (`fecha_reserva`,`hora_reserva`,`nombre_reserva`,`telf_reserva`,`id_mesa`) VALUES (?,?,?,?,?); "; 
 				$sentencia=$this->pdo->prepare($query); 
 				$sentencia->bindParam(1,$dia); 
@@ -61,13 +69,17 @@ class ReservaDao{
 				$sentencia->bindParam(4,$telefono);
 				$sentencia->bindParam(5,$id_mesa);
 				$sentencia->execute(); 
-
+				echo "RESERVA HECHA <br>";
+				echo "<a href='../view\zona.camareros.php'>link text</a>"; 
 				
-				echo "todo OK"; 
+				}else{
+
+					header('Location:../view\zona.camareros.php');
+				}
+				
+				
 
 			} catch (\Throwable $th) {
-				print_r($sentencia); 
-				echo "Catch<br>"; 
 				 echo $th; 
 			}
 		}
