@@ -70,7 +70,9 @@ class ReservaDao{
 				$sentencia->bindParam(5,$id_mesa);
 				$sentencia->execute(); 
 				echo "RESERVA HECHA <br>";
-				echo "<a href='../view\zona.camareros.php'>link text</a>"; 
+				
+				echo "<br>"; 
+				echo "<a href='../view\zona.camareros.php'>VOLVER</a>"; 
 				
 				}else{
 
