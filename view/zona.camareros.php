@@ -4,7 +4,8 @@
 	<title>Deux Moulins</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" type="text/css" href="../css/admin.css">
+	  <link rel="stylesheet" type="text/css" href="../css/admin.css">
+	  <script src="../js/reservas.js"></script>
 </head>
 <body>
 
@@ -14,13 +15,13 @@
 		require_once '../controller/session_controller.php';
 	?>
 	<h1 class="titulo">Página principal</h1>
-	<!-- Formulairo para hacer reservas -->
+	<!-- Formulario para hacer reservas -->
 	<form action="./hacer_reserva.php" method="POST">
 		<label for="dia">DÍA</label>
-		<input type="date" id="dia" name="dia" required>
+		<input type="date" id="dia" name="dia"  class="input" required>
 		<label for="hora">HORA</label >
-		<select name="hora" id="hora" required>
-			<option >-----</option>
+		<select name="hora" id="hora" class="input" required>
+			<option>-----</option>
 			<option value="13">13:00</option>
 			<option value="14">14:00</option>
 			<option value="15">15:00</option>
@@ -29,7 +30,7 @@
 		</select>
 		<br>
 		<label for="mesa">MESA</label>
-		<select name="mesa" id="mesa" required>
+		<select name="mesa" id="mesa"  class="input" required>
 			<option >-----</option>
 			<option value="1">1 -1 plaza</option>
 			<option value="2">2 -1 plaza</option>
@@ -50,10 +51,10 @@
 		</select>
 		<br>
 		<label for="nombre">NOMBRE</label>
-		<input type="text" id="nombre" name="nombre" required><br>
+		<input type="text" id="nombre" name="nombre" class="input" required><br>
 		<label for="telefono">TELÉFONO</label>
-		<input type="text" name="telefono" id="telefono" required>
-		<input type="submit" value="Reservar" >
+		<input type="text" name="telefono" id="telefono" class="input" required>
+		<input type="submit" value="Reservar" onsubmit="validacionForm()" >
 	</form>
 
 	<div class="row">
