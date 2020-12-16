@@ -14,7 +14,7 @@ class IncidenciaDao{
 	        $id=$_POST['id_mesa'];
 	        $descripcion_incidencia=$_POST['descripcion_incidencia'];
 	        $estado_incidencia=$_POST['estado_incidencia'];
-	        $id_camarero=$_POST['id_camarero'];
+	        $id_user=$_POST['id_user'];
 	        $curdate=date("Y/m/d H:i:s");
 	        echo $id;
 	        $stmt=$pdo->prepare("INSERT INTO `incidencia` (`id_incidencia`, `descripcion_incidencia`, `estado_incidencia`, `fecha_incidencia`, `id_mesa`) VALUES (NULL, ?, 'abierta', ?, ?);");
@@ -22,7 +22,7 @@ class IncidenciaDao{
 			$stmt->bindParam(2,$curdate);
 			$stmt->bindParam(3,$id);
 			$stmt->execute();
-	        $query="UPDATE `mesa` SET `disponible_mesa`=2 WHERE `id_mesa` = ?;";
+	        $query="UPDATE `tbl_mesa` SET `disponible_mesa`=2 WHERE `id_mesa` = ?;";
 	        $sentencia1=$pdo->prepare($query);
 	        $sentencia1->bindParam(1,$id);
 	        $sentencia1->execute();
@@ -36,7 +36,7 @@ class IncidenciaDao{
     }
     public function mostrar(){
     	include '../model/connection.php';
-    	$sql="SELECT * FROM mesa where disponible_mesa=2";
+    	$sql="SELECT * FROM tbl_mesa where disponible_mesa=2";
 		$sentencia=$pdo->prepare($sql);
 		$sentencia->execute();
 		$lista_mesa=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -66,7 +66,7 @@ class IncidenciaDao{
 	        $stmt=$pdo->prepare("UPDATE `incidencia` SET `estado_incidencia`='solucionada' where id_mesa=?  ORDER BY `id_incidencia` DESC LIMIT 1;");
 	        $stmt->bindParam(1,$id);
 			$stmt->execute();
-	        $query="UPDATE `mesa` SET `disponible_mesa`=1 WHERE `id_mesa` = ?;";
+	        $query="UPDATE `tbl_mesa` SET `disponible_mesa`=1 WHERE `id_mesa` = ?;";
 	        $sentencia1=$pdo->prepare($query);
 	        $sentencia1->bindParam(1,$id);
 	        $sentencia1->execute();

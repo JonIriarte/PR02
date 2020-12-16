@@ -27,6 +27,9 @@ class UsuarioDao{
             $user->setStatus($result['status_user']);
             $user->setApellido($result['apellido_user']);
             $user->setEmail($result['email_user']);
+            if($result['status_user']=='Baja'){
+                return false; 
+            }
             session_start();
             $_SESSION['id']=$user->getId();//coge el nombre del usuario para mostrarlo en la página una vez realizado el login.
             $_SESSION['nombre']=$user->getNombre();
