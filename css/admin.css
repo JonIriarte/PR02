@@ -7,19 +7,22 @@
     background-size: 100% 100%;
     filter: blur(8px);
     z-index: -1;
+    background-color: blanchedalmond;
 }
 
 form {
-    border: 3px solid black;
-    width: 25%;
+    border: 3px solid rgb(31, 30, 30);
+    width: 45%;
     margin-left: 37.5%;
-    background-color: #c7b446;
+    background-color: #72716e;
     text-align: left;
-    font-size: 150%;
+    font-size: 140%;
     margin-bottom: 3%;
     opacity: 0.9;
     padding-top: 2%;
     padding-left: 2%;
+    text-align: center;
+    border-radius: 2.5%;
 }
 
 .form {
@@ -30,7 +33,7 @@ form {
 }
 
 form select {
-    font-size: 70%;
+    font-size: 50%;
 }
 
 input[type=submit] {
@@ -59,30 +62,27 @@ button {
     float: left;
 }
 
-button a {
-    text-decoration: none;
-}
-
-button:hover {
-    background-color: #3e8e41;
-}
-
-button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-}
-
 .titulo {
     text-align: center;
     font-size: 400%;
 }
 
-.column {
+.reservas {
     background-color: #aaa;
     float: center;
-    width: 100%;
-    padding: 10px;
-    border-radius: 3 px;
+    width: 95%;
+    padding: 2%;
+    border-radius: 1%;
     text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }

@@ -54,10 +54,7 @@ class ReservaDao{
 		$reserva->setIdMesa($id_mesa);
 		$reserva->setFechaReserva($dia); 
 		//Comprobación de que la fecha y la hora de la reserva sea posterior al momento actual. 
-		
-		
 		$UNIXHoy=time(); 
-		echo  "Primer echo de UNIXHoy ".$UNIXHoy; 
 		//Convertir el día de la reserva a tiempo UNIX
 		$fechaReserva=strtotime($dia); 
 		//Segundos del día que han pasado desde el inicio hasta cada franja que se puede reservar
@@ -83,13 +80,7 @@ class ReservaDao{
 			$UNIXHoy=$UNIXHoy+$f5; 
 			$fechaReserva=$fechaReserva+$f5;
 		}
-		echo "<br>";
-		echo "<br>";
-		echo  "Segundo echo de UNIXHoy ".$UNIXHoy; 
-		echo "<br>";
-		echo "Fecha Reserva ".$fechaReserva; 
-		if($fechaReserva>$UNIXHoy){
-			
+		if($fechaReserva>$UNIXHoy){	
 			try {
 			
 			 	$prequery="SELECT * FROM tbl_reserva WHERE fecha_reserva='$dia' AND hora_reserva='$hora' AND id_mesa='$id_mesa'"; 
@@ -122,4 +113,13 @@ class ReservaDao{
 			header('location: ../view/zona.camareros.php'); 
 		}
 	}
+	public function anularReserva($telefono){
+		
+
+
+	}
+
+
+
+
 }

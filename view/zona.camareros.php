@@ -15,8 +15,11 @@
 		require_once '../controller/session_controller.php';
 	?>
 	<h1 class="titulo">Página principal</h1>
-	<!-- Formulario para hacer reservas -->
+	<div class="row">
+  <div class="column">
+	  <!-- Formulario para hacer reservas -->
 	<form action="./hacer_reserva.php" method="POST">
+		<h3> HACER RESERVAS</h3>
 		<label for="dia">DÍA</label>
 		<input type="date" id="dia" name="dia"  class="input" required>
 		<label for="hora">HORA</label >
@@ -56,9 +59,22 @@
 		<input type="text" name="telefono" id="telefono" class="input" required>
 		<input type="submit" value="Reservar" onsubmit="validacionForm()" >
 	</form>
+  </div>
+  <div class="column">
+  <form action="./anular_reserva.php" method="POST">
+		<h3>ANULAR RESERVAS</h3>
+		<Label for=" telefono">Teléfono</Label>
+		<input type="text" name="telefono">
+		<input type="submit" value="Anular" >
+	</form>
+  </div>
+</div> 
+	
+
+	
 
 	<div class="row">
-		<div class="column" >
+		<div class="reservas" >
 			<h2>RESERVAS</h2>
 			<p>
 				<?php 
