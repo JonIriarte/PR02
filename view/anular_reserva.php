@@ -1,4 +1,6 @@
 <?php
+
+//¿Qué tal si integro esto en una página HTML con el estilo del resto de la app?
     require_once '../controller/session_controller.php';
     include '../model/reservaDAO.php';  
 if (isset($_POST['telefono'])){

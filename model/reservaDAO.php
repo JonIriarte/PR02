@@ -22,7 +22,6 @@ class ReservaDao{
 			echo "<td style='text-align:center'>Hora</td>";
 			echo "<td style='text-align:center'>Mesa</td>";
 		foreach ($lista_reserva as $reserva) {
-			$id_reserva=$reserva["id_reserva"]." ";
 			echo "<tr>";
 			echo "<td style='text-align:center'>".$reserva['id_reserva']."</td>";
 			echo "<td style='text-align:center'>".$reserva['telf_reserva']."</td>";
@@ -30,21 +29,6 @@ class ReservaDao{
 			echo "<td style='text-align:center'>".$reserva['fecha_reserva']."</td>";
 			echo "<td style='text-align:center'>".$reserva['hora_reserva']."</td>";
 			echo "<td style='text-align:center'>".$reserva['id_mesa']."</td>";
-			echo "</tr>";
-		}
-	}
-	public function contarReservas(){
-		include '../model/connection.php';
-    	$sql="SELECT count(reserva.id_mesa) as 'Veces reservada',mesa.lugar_mesa, reserva.id_mesa from reserva inner join mesa on reserva.id_mesa=mesa.id_mesa group by id_mesa";
-		$sentencia=$pdo->prepare($sql);
-		$sentencia->execute();
-		$lista_contador=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-		foreach ($lista_contador as $contador) {
-			$id_reserva=$contador["id_mesa"]." ";
-			echo "<tr>";
-			echo "<td style='text-align:center'>".$contador['id_mesa']."</td>";
-			echo "<td style='text-align:center'>".$contador['lugar_mesa']."</td>";
-			echo "<td style='text-align:center'>".$contador['Veces reservada']."</td>";
 			echo "</tr>";
 		}
 	}
@@ -112,9 +96,8 @@ class ReservaDao{
 			header('location: ../view/zona.camareros.php');
 		}
 	}
+	//Función para mostar las reservas ligadas a un número de teléfono para poder borrarlas si es necesario
 	public function MostrarAnularReserva($telefono){
-		$reserva=new Reserva("","","",$telefono);
-
 		$query="SELECT * FROM `tbl_reserva` WHERE `telf_reserva` LIKE '%$telefono%'";
 		$sentencia=$this->pdo->prepare($query);
 		$sentencia->execute();
@@ -146,7 +129,7 @@ class ReservaDao{
 			}
 		}
 	}
-
+//Función que borra una reserva de la base de datos en base al teléfono
 	public function AnularReserva($id){
         $query="DELETE  FROM tbl_reserva WHERE id_reserva= ?; ";
         $sentencia=$this->pdo->prepare($query);
