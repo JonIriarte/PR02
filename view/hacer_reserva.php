@@ -13,7 +13,6 @@
             $mostrar_reserva->hacerReserva($dia,$hora,$nombre,$telefono,$id_mesa); 
 
         } else {
-            echo '<script>alert("No se hacer esa reserva")</script>'; 
             header('Location:./zona.camareros.php'); 
         }
 ?>

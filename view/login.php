@@ -12,7 +12,7 @@
 <body>
 <div class="body"></div>
   <div class="header">
-    Deux<span>Moulins</span>
+    Deux <span>Moulins</span>
   </div>
 <br>
   <div class="login">

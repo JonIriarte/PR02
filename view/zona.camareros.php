@@ -18,13 +18,13 @@
 	<div class="row">
 		<div class="column">
 			<!-- Formulario para hacer reservas -->
-			<form action="./hacer_reserva.php" method="POST">
+			<form action="./hacer_reserva.php" method="POST" onsubmit="return validacionForm()">
 				<h3> HACER RESERVAS</h3>
 				<label for="dia">DÍA</label>
-				<input type="date" id="dia" name="dia"  class="input" required>
+				<input type="date" id="dia" name="dia"  class="dato" >
 				<label for="hora">HORA</label >
-				<select name="hora" id="hora" class="input" required>
-					<option>-----</option>
+				<select name="hora" id="hora" class="dato" >
+					<option value="">-----</option>
 					<option value="13">13:00</option>
 					<option value="14">14:00</option>
 					<option value="15">15:00</option>
@@ -33,8 +33,8 @@
 				</select>
 				<br>
 				<label for="mesa">MESA</label>
-				<select name="mesa" id="mesa"  class="input" required>
-					<option >-----</option>
+				<select name="mesa" id="mesa" class="dato" >
+					<option value="">-----</option>
 					<option value="1">1 -1 plaza</option>
 					<option value="2">2 -1 plaza</option>
 					<option value="3">3 -1 plaza</option>
@@ -54,10 +54,12 @@
 				</select>
 				<br>
 				<label for="nombre">NOMBRE</label>
-				<input type="text" id="nombre" name="nombre" class="input" required><br>
+				<input type="text" id="nombre" name="nombre" class="dato" ><br>
 				<label for="telefono">TELÉFONO</label>
-				<input type="text" name="telefono" id="telefono" class="input" required>
-				<input type="submit" value="Reservar" onsubmit="validacionForm()" >
+				<input type="text" name="telefono" id="telefono" class="dato" >
+				<input type="submit" value="Reservar" >
+				<div id="message"></div>
+
 			</form>
 		</div>
 		<div class="column">
