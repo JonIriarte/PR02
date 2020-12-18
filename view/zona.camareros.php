@@ -21,7 +21,7 @@
 			<form action="./hacer_reserva.php" method="POST" onsubmit="return validacionForm()">
 				<h3> HACER RESERVAS</h3>
 				<label for="dia">DÍA</label>
-				<input type="date" id="dia" name="dia"  class="dato" >
+				<input type="date" id="dia" name="dia"  class="dato">
 				<label for="hora">HORA</label >
 				<select name="hora" id="hora" class="dato" >
 					<option value="">-----</option>
@@ -59,6 +59,8 @@
 				<input type="text" name="telefono" id="telefono" class="dato" >
 				<input type="submit" value="Reservar" >
 				<div id="message"></div>
+				<br>
+				<div id="message2"></div>
 
 			</form>
 		</div>
