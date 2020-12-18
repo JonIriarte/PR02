@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
     <title>Administración</title>
 </head>
-<body>
+<body id="body">
 <?php
 		require_once '../controller/session_controller.php';
 	?>
 
-    <h1>ADMINISTRACIÓN</h1>
+    <h1 class="titulo">ADMINISTRACIÓN</h1>
 
     <?php
 		$mostrar_usuarios=new UsuarioDao;
@@ -18,7 +19,7 @@
 	?>
 
     <h3>CREAR USUARIO</h3>
-    <form action="crearUsuario.php" method="POST">
+    <form action="crearUsuario.php" method="POST" id="crear">
         <label for="nombre"></label>
         <input type="text" name="nombre" placeholder="Nombre" required>
         <label for="apellido"></label>
@@ -40,8 +41,8 @@
             <option value="Vacaciones">Vacaciones</option>
             <option value="Trabaja">Trabaja</option>
         </select>
-        <br><br>
-        <input type="submit" id="submit" value="Entrar">
+        <br>
+        <input type="submit" id="submit" value="Crear">
         </form>
         <br><br>
     <h3>USUARIOS</h3>

@@ -1,13 +1,12 @@
+/*CSS DE zona.admin, zona.camareros y zona.mantenimiento*/
+
 .body {
-    position: fixed;
     top: -20px;
     left: -20px;
     right: -40px;
     bottom: -40px;
-    background-size: 100% 100%;
     filter: blur(8px);
-    z-index: -1;
-    background-color: blanchedalmond;
+    background-color: #C0C0C0;
 }
 
 form {
@@ -37,7 +36,7 @@ form select {
 }
 
 input[type=submit] {
-    margin-left: 39%;
+    margin-left: 9%;
     margin-top: 5%;
     margin-bottom: 6%;
     font-size: 70%;
@@ -54,7 +53,6 @@ button {
     text-align: center;
     text-decoration: none;
     outline: none;
-    background-color: #4CAF50;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #747F82;
@@ -64,7 +62,7 @@ button {
 
 .titulo {
     text-align: center;
-    font-size: 400%;
+    font-size: 300%;
 }
 
 .reservas {
@@ -74,6 +72,7 @@ button {
     padding: 2%;
     border-radius: 1%;
     text-align: center;
+    align-items: center;
 }
 
 .column {
@@ -85,4 +84,12 @@ button {
     content: "";
     display: table;
     clear: both;
+}
+
+#body {
+    background-color: #C0C0C0;
+}
+
+.crear {
+    border-color: black;
 }

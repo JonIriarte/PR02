@@ -6,12 +6,14 @@ if (isset($_POST['telefono'])){
     echo $mostrar->MostrarAnularReserva($_POST['telefono']); 
     
     
-    // $anular=new ReservaDao(); 
-    // echo $anular->AnularReserva($_GET['id_reserva']); 
+    
 
 }else{
     header('Location:./zona.camareros.php');
 }
-echo $_GET['id_reserva']; 
+if(isset($_GET['id_reserva'])){
+$anular=new ReservaDao(); 
+echo $anular->AnularReserva($_GET['id_reserva']); 
+}
 ?>
 

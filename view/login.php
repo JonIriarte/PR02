@@ -10,9 +10,6 @@
 </head>
 
 <body>
-
-<h2>Inicio de sesión</h2>
-
 <div class="body"></div>
   <div class="header">
     Deux<span>Moulins</span>

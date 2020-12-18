@@ -67,13 +67,13 @@ class UsuarioDao{
         $sentencia=$this->pdo->prepare($query);
         $sentencia->execute();
         $result=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-        echo "<table>"; 
-        echo "<td style='text-align:center'>Id</td>";
-        echo "<td style='text-align:center'>Email</td>";
-        echo "<td style='text-align:center'>Nombre</td>";
-        echo "<td style='text-align:center'>Apellido</td>";
-        echo "<td style='text-align:center'>Estado</td>"; 
-        echo "<td style='text-align:center'>Perfil</td>"; 
+        echo "<table class=".'reservas'.">"; 
+        echo "<td style='text-align:center'>ID</td>";
+        echo "<td style='text-align:center'>CORREO</td>";
+        echo "<td style='text-align:center'>NOMBRE</td>";
+        echo "<td style='text-align:center'>APELLIDO</td>";
+        echo "<td style='text-align:center'>ESTADO</td>"; 
+        echo "<td style='text-align:center'>PERFIL</td>"; 
          foreach ($result as $user){
             $id=$user['id_user']; 
             echo "<tr>"; 

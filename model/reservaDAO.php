@@ -122,6 +122,7 @@ class ReservaDao{
 		$numero=$sentencia->rowCount();
 			if($numero==0){
 				echo "No hay reservas con ese teléfono";
+				echo "<br>"; 
 				echo "<a href='../view\zona.camareros.php'>VOLVER</a>";
 			}else{
 				echo "<table>";
@@ -151,6 +152,6 @@ class ReservaDao{
         $sentencia=$this->pdo->prepare($query);
         $sentencia->bindParam(1,$id);
         $sentencia->execute();
-        header('Location:../view\zona.camarero.php');
+        header('Location:./zona.camareros.php');
     }
 }
