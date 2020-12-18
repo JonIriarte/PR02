@@ -93,3 +93,7 @@ button {
 #crear {
     border-color: black;
 }
+
+#volver {
+    text-align: left;
+}

@@ -65,7 +65,6 @@ class ReservaDao{
 		}
 		if($fechaReserva>$UNIXHoy){
 			try {
-
 			 	$prequery="SELECT * FROM tbl_reserva WHERE fecha_reserva='$dia' AND hora_reserva='$hora' AND id_mesa='$id_mesa'";
 			 	$prequery=$this->pdo->prepare($prequery);
 			 	$prequery->execute();
@@ -98,7 +97,7 @@ class ReservaDao{
 	}
 	//Función para mostar las reservas ligadas a un número de teléfono para poder borrarlas si es necesario
 	public function MostrarAnularReserva($telefono){
-		$query="SELECT * FROM `tbl_reserva` WHERE `telf_reserva` LIKE '%$telefono%'";
+		$query="SELECT * FROM `tbl_reserva` WHERE `telf_reserva` LIKE '%$telefono%' ORDER BY fecha_reserva ASC";
 		$sentencia=$this->pdo->prepare($query);
 		$sentencia->execute();
 		$lista_reserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -108,7 +107,7 @@ class ReservaDao{
 				echo "<br>"; 
 				echo "<a href='../view\zona.camareros.php'>VOLVER</a>";
 			}else{
-				echo "<table>";
+				echo "<table class=".'reservas'.">";
 				echo "<td style='text-align:center'>Id reserva</td>";
 				echo "<td style='text-align:center'>Teléfono de contacto</td>";
 				echo "<td style='text-align:center'>Nombre</td>";

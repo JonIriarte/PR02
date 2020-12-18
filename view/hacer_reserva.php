@@ -1,8 +1,6 @@
 <?php
            require_once '../controller/session_controller.php';
            include '../model/reservaDAO.php'; 
-        
-
         if (isset($_POST['dia']) && isset($_POST['hora']) && isset($_POST['nombre']) && isset($_POST['telefono']) && isset($_POST['mesa']) && ($_POST['dia']!="") && ($_POST['hora']!="")&& ($_POST['nombre']!="")&& ($_POST['telefono']!="")&& ($_POST['mesa']!="")  ){
             $dia=$_POST['dia']; 
             $hora=$_POST['hora'];
@@ -18,6 +16,4 @@
             echo '<script>alert("No se hacer esa reserva")</script>'; 
             header('Location:./zona.camareros.php'); 
         }
-       
-
 ?>
